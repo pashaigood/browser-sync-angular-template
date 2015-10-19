@@ -39,7 +39,8 @@ function browserSyncInit(baseDir, browser) {
   browserSync.instance = browserSync.init({
     startPath: '/',
     server: server,
-    browser: browser
+    browser: browser,
+    reloadOnRestart: true
   });
 }
 
@@ -50,7 +51,10 @@ browserSync.use(browserSyncSpa({
 browserSync.use(
   browserSyncAngularTemplate(
     {
-      files: '/app/**/*.html'
+      // Pattern for templates files
+      templates: '/app/**/*.html',
+      // File where modules are required
+      indexJs: 'index.module.js'
     }
   )
 );

@@ -55,3 +55,9 @@ gulp.task('coveralls', ['test'], function () {
 
 gulp.task('prepublish', ['nsp']);
 gulp.task('default', ['static', 'test', 'coveralls']);
+
+var bg = require('gulp-bg');
+gulp.task('serve:example', bg('gulp', 'serve', '--gulpfile', './example/gulpfile.js'));
+gulp.task('serve', ['serve:example'], function() {
+  gulp.watch(['lib/**/*.js', 'example/gulp/**/*.js'], ['serve:example']);
+})
