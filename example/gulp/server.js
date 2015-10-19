@@ -47,7 +47,13 @@ browserSync.use(browserSyncSpa({
   selector: '[ng-app]'// Only needed for angular apps
 }));
 
-browserSync.use(browserSyncAngularTemplate());
+browserSync.use(
+  browserSyncAngularTemplate(
+    {
+      files: '/app/**/*.html'
+    }
+  )
+);
 
 gulp.task('serve', ['watch'], function () {
   browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);

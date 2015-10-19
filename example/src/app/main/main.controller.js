@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, webDevTec, toastr, $compile) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -35,5 +35,7 @@
         awesomeThing.rank = Math.random();
       });
     }
+
+    window._$compile = $compile;
   }
 })();
