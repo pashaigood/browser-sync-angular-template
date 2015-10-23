@@ -51,10 +51,12 @@ browserSync.use(browserSyncSpa({
 browserSync.use(
   browserSyncAngularTemplate(
     {
-      // Pattern for templates files
+      // Pattern for templates files.
       templates: '/app/**/*.html',
-      // File where modules are required
-      indexJs: 'index.module.js'
+      // File where modules are required.
+      indexJs: 'index.module.js',
+      // Module name. Used for get the access to required providers.
+      moduleName: 'example'
     }
   )
 );

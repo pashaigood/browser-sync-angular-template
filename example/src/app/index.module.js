@@ -12,6 +12,5 @@
       'ui.router',
       'ui.bootstrap',
       'toastr'
-      /** igTemplateReloader */
     ]);
 })();

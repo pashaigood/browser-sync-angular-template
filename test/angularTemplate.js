@@ -22,7 +22,7 @@ var mockIncorrectFileChangeData = {
 
 describe('Angular template', function () {
 
-  it('should set options', function() {
+  it('should set options.', function() {
     var newOptions = {};
 
     assert.doesNotThrow(function() {
@@ -33,7 +33,7 @@ describe('Angular template', function () {
     options = newOptions;
   });
 
-  it('should catch files by option value "templates"', function() {
+  it('should catch files by option value "templates".', function() {
     assert(
       angularTemplate.isMatch('/app/main/main.html', options.templates),
       true
@@ -46,7 +46,7 @@ describe('Angular template', function () {
     assert.equal(mockIncorrectFileChangeData.event, 'change');
   });
 
-  it('should catch index file by option "indexJs"', function() {
+  it('should catch index file by option "indexJs".', function() {
     assert(angularTemplate.isMatch('/app/index.modules.js', options.indexJs));
   });
 });
