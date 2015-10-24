@@ -25,6 +25,17 @@ describe('File changer', function () {
     );
   });
 
+  it('id should increase, only when mark injector does not get id.', function() {
+    var input = '<div />',
+        expectOutput = '<div igat="%ID%" />';
+
+    assert.equal(fileChanger.markInjector(input), expectOutput.replace('%ID%', 0));
+    assert.equal(fileChanger.markInjector(input), expectOutput.replace('%ID%', 1));
+
+    assert.equal(fileChanger.markInjector(input, 0), expectOutput.replace('%ID%', 0));
+    fileChanger.id = 0;
+  });
+
   it('should add template id.', function() {
     var mock = fs.readFileSync('test/mocks/navbar.html', 'utf8'),
         navbarTemplate = fs.readFileSync('example/src/app/components/navbar/navbar.html', 'utf8'),
