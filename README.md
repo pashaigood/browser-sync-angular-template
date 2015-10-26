@@ -1,5 +1,7 @@
-# browser-sync-angular-template [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> browserSync plugin from updating angular template without page reload.
+# browser-sync-angular-template
+<br />
+[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+> browserSync plugin for updating angular template without page reload.
 
 
 ## Install
@@ -12,10 +14,52 @@ $ npm install --save browser-sync-angular-template
 ## Usage
 
 ```js
+// gulpfile.js
+var browserSync = require('browser-sync');
 var browserSyncAngularTemplate = require('browser-sync-angular-template');
 
-browserSyncAngularTemplate('Rainbow');
+browserSync.use(
+  browserSyncAngularTemplate({
+    templates: '/app/**/*.html',
+    indexJs: 'index.module.js',
+    moduleName: 'example'
+  })
+);
 ```
+
+## API
+
+browserSyncAngularTemplate(options)
+
+### options
+Type: ```Object```
+
+#### templates
+Type: ```String```
+
+Pattern for templates files. They will be injected in runtime.
+
+default: **/*.html
+
+#### indexJs
+Type: ```String```
+
+Plugin injects the starting script in this file in runtime.
+
+default: index.js
+
+#### moduleName
+Type: ```String```
+
+Module name. Used for get the access to required providers.
+
+default: require(bower.json || package.json).name
+
+## TODO
+
+* E2e tests.
+* Create a smart injector.
+* Improve my english.
 
 ## License
 
