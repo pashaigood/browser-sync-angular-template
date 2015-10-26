@@ -1,6 +1,6 @@
 {
   "name": "browser-sync-angular-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "browserSync plugin from updating angular template without page reload.",
   "homepage": "https://",
   "author": {
