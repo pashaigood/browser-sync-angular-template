@@ -35,5 +35,9 @@
         awesomeThing.rank = Math.random();
       });
     }
+
+    vm.resort = function() {
+      getWebDevTec();
+    };
   }
 })();

@@ -2,50 +2,58 @@
   var EVENT_NAME = "%EVENT%";
   var sockets = bs.socket;
 
-  sockets.on(
-    EVENT_NAME, function (data) {
+  sockets.on(EVENT_NAME, function (data) {
       var $compile = window.igat.$compile,
-          $templateCache = window.igat.$templateCache;
+          $templateCache = window.igat.$templateCache,
+          templateUrl = findTemplate(data.templateUrl, $templateCache),
+          element,
+          scope,
+          newElement;
 
-      var domElement = document.querySelector(data.selector);
-      var templateUrl = data.templateUrl;
+      if (! templateUrl) {
+        console.info('[AT] Can\'t find template ' + data.templateUrl);
+        return false;
+      }
 
-      if (! domElement) {
+      var domElements = document.querySelectorAll(data.selector);
+
+      if (! domElements.length) {
         console.info('[AT] Can\'t find element by selector ' + data.selector);
         return false;
       }
 
-      var element = angular.element(domElement);
-      var scope = element.scope();
-
-
-
-
-      var searching = [templateUrl, templateUrl.slice(1)];
-      while (searching.length) {
-        templateUrl = searching.pop();
-
-        if ($templateCache.get(templateUrl)) {
-          break;
-        }
-      }
-
-      if (! $templateCache.get(templateUrl)) {
-        console.info('[AT] Can\'t find template ' + templateUrl);
-        return false;
-      }
       $templateCache.remove(templateUrl);
       $templateCache.put(templateUrl, data.template);
 
-      scope.$apply(function() {
-        var newElement = $compile(data.template)(scope);
-        element.replaceWith(newElement);
-        element = null;
-        newElement = null;
-        scope = null;
-        domElement = null;
+      angular.forEach(domElements, function(domElement) {
+
+        element = angular.element(domElement);
+        scope = element.scope();
+
+        scope.$apply(function() {
+          newElement = $compile(data.template)(scope);
+          element.replaceWith(newElement);
+          domElement = null;
+        });
       });
+
+      element = null;
+      newElement = null;
+      scope = null;
     }
   );
 
+
+  function findTemplate(templateUrl, $templateCache) {
+    var searching = [templateUrl, templateUrl.slice(1)];
+    while (searching.length) {
+      templateUrl = searching.pop();
+
+      if ($templateCache.get(templateUrl)) {
+        return templateUrl;
+      }
+    }
+
+    return false;
+  }
 })(window.___browserSync___);
