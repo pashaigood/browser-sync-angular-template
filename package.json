@@ -22,6 +22,7 @@
   ],
   "repository": "pashaigood/browser-sync-angular-template",
   "devDependencies": {
+    "cz-conventional-changelog": "^1.1.4",
     "gulp": "^3.6.0",
     "gulp-bg": "0.0.7",
     "gulp-coveralls": "^0.1.0",
@@ -41,5 +42,10 @@
   "dependencies": {
     "lodash": "^3.10.1",
     "minimatch": "^3.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

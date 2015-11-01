@@ -1,6 +1,6 @@
 # browser-sync-angular-template
 <br />
-[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![Commitizen friendly][commitizen-image]][commitizen-url]
 > browserSync plugin for updating angular template without page reload.
 
 
@@ -39,14 +39,14 @@ Type: ```String```
 
 Pattern for templates files. They will be injected in runtime.
 
-default: **/*.html
+default: '**/*.html'
 
 #### indexJs
 Type: ```String```
 
 Plugin injects the starting script in this file in runtime.
 
-default: index.js
+default: 'index.js'
 
 #### moduleName
 Type: ```String```
@@ -74,3 +74,6 @@ Apache-2.0 © [Pavel Belugin](https://github.com/pashaigood)
 [daviddm-url]: https://david-dm.org/pashaigood/browser-sync-angular-template
 [coveralls-image]: https://coveralls.io/repos/pashaigood/browser-sync-angular-template/badge.svg
 [coveralls-url]: https://coveralls.io/r/pashaigood/browser-sync-angular-template
+[commitizen-image]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[commitizen-url]: http://commitizen.github.io/cz-cli/
+
