@@ -39,7 +39,7 @@ Type: ```String```
 
 Pattern for templates files. They will be injected in runtime.
 
-default: '**/*.html'
+default: '\*\*/\*.html'
 
 #### indexJs
 Type: ```String```
@@ -58,6 +58,7 @@ default: require(bower.json || package.json).name
 ## TODO
 
 * E2e tests.
+* Test the proxy.
 * Create a smart injector.
 * Improve my english.
 

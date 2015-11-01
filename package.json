@@ -2,7 +2,7 @@
   "name": "browser-sync-angular-template",
   "version": "0.1.1",
   "description": "browserSync plugin from updating angular template without page reload.",
-  "homepage": "https://",
+  "homepage": "https://github.com/pashaigood/browser-sync-angular-template",
   "author": {
     "name": "Pavel Belugin",
     "email": "pashaigood@gmail.com",
@@ -20,7 +20,7 @@
     "update",
     "plugin"
   ],
-  "repository": "pashaigood/browser-sync-angular-template",
+  "repository": "https://github.com/pashaigood/browser-sync-angular-template.git",
   "devDependencies": {
     "cz-conventional-changelog": "^1.1.4",
     "gulp": "^3.6.0",
