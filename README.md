@@ -1,13 +1,13 @@
 # browser-sync-angular-template
 <br />
 [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![Commitizen friendly][commitizen-image]][commitizen-url]
-> browserSync plugin for updating angular template without page reload.
+> BrowserSync plugin for updating angular template without page reload.
 
 
 ## Install
 
 ```sh
-$ npm install --save browser-sync-angular-template
+$ npm install --save-dev browser-sync-angular-template
 ```
 
 
