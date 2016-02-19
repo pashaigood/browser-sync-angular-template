@@ -23,6 +23,7 @@
   ],
   "repository": "https://github.com/pashaigood/browser-sync-angular-template.git",
   "devDependencies": {
+    "core-util-is": "1.0.2",
     "cz-conventional-changelog": "^1.1.4",
     "gulp": "^3.6.0",
     "gulp-bg": "0.0.7",
@@ -31,11 +32,11 @@
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^0.9.0",
     "gulp-mocha": "^2.0.0",
-    "gulp-nsp": "^0.4.5",
-    "gulp-plumber": "^1.0.0"
+    "gulp-nsp": "2.2.1",
+    "gulp-plumber": "^1.0.0",
+    "util-deprecate": "1.0.2"
   },
   "scripts": {
-    "prepublish": "gulp prepublish",
     "test": "gulp"
   },
   "license": "Apache-2.0",

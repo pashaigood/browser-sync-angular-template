@@ -18,7 +18,7 @@ gulp.task('static', function () {
 });
 
 gulp.task('nsp', function (cb) {
-  nsp('package.json', cb);
+  nsp({package: __dirname + '/package.json'}, cb);
 });
 
 gulp.task('pre-test', function () {
@@ -53,7 +53,6 @@ gulp.task('coveralls', ['test'], function () {
     .pipe(coveralls());
 });
 
-gulp.task('prepublish', ['nsp']);
 gulp.task('default', ['static', 'test', 'coveralls']);
 
 var bg = require('gulp-bg');
